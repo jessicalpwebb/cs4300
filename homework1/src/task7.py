@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+#creating plot graph
 def plot(output_file: str = "plot.png") -> str:
     x = [1, 2, 3, 4, 5]
     y = [n+10 for n in x] 

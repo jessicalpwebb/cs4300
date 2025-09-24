@@ -1,5 +1,6 @@
 import src.task2 as task2
 
+#test to see if variable names are your right
 def test_vars():
     assert isinstance(task2.int1, int)
     assert isinstance(task2.float1, float)

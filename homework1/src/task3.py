@@ -1,3 +1,4 @@
+#checking if number is odd,even, or zero w/out user input
 def test_numbers():
 
     num = 5
@@ -9,6 +10,7 @@ def test_numbers():
     else:
         print("number is odd")
 
+#Sieve of Eratosthenes algorithm
 def test_primes():
     n = 3000 
     A = [True] * (n + 1)
@@ -28,6 +30,7 @@ def test_primes():
 
 test_primes()
 
+# function to add first 100 numbers
 def test_addnumbers():
     sum = 0
     inc = 0
