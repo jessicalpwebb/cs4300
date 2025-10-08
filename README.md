@@ -177,7 +177,7 @@ Run all unit and API tests:
 python3 manage.py test
 ```
 
-##AI Statement
+## AI Statement
 
 This project incorporated limited AI assistance through ChatGPT (OpenAI, GPT-5) to support development and documentation. ChatGPT was used strictly as an educational aid and productivity enhancer, not as a substitute for human understanding or authorship.
 
