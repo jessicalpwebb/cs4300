@@ -177,11 +177,11 @@ Run all unit and API tests:
 python3 manage.py test
 ```
 
-AI Statement
+##AI Statement
 
 This project incorporated limited AI assistance through ChatGPT (OpenAI, GPT-5) to support development and documentation. ChatGPT was used strictly as an educational aid and productivity enhancer, not as a substitute for human understanding or authorship.
 
-How ChatGPT Was Used
+**How ChatGPT Was Used**
 
 Project Planning: Helped outline the Django setup process, database structure, and workflow organization.
 
@@ -191,7 +191,7 @@ Debugging Assistance: Offered explanations and step-by-step resolutions for comm
 
 Documentation: Assisted in structuring and editing this README file to ensure clarity, technical accuracy, and consistency in style.
 
-Ethical Use and Verification
+**Ethical Use and Verification**
 
 All AI-generated outputs were reviewed, tested, and manually modified by the developer. ChatGPT’s role was on explaining concepts and improving efficiency. Every piece of final code, configuration, and documentation was written or verified by the human author in accordance with academic integrity standards.
 
