@@ -1,0 +1,29 @@
+{% extends 'bookings/base.html' %}
+{% block title %}Movie List{% endblock %}
+{% block content %}
+<h2>Available Movies</h2>
+<div class="row">
+  {% for movie in movies %}
+  <div class="col-md-4 mb-3">
+    <div class="card shadow-sm">
+      {% if movie.image %}
+        <img src="/proxy/8000{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}" style="height: 300px; object-fit: cover;">
+        {% else %}
+        <img src="/static/default_poster.jpg" 
+             class="card-img-top" 
+             alt="No image available" 
+             style="height: 300px; object-fit: cover;">
+      {% endif %}
+      <div class="card-body">
+        <h5 class="card-title">{{ movie.title }}</h5>
+        <p class="card-text">{{ movie.description }}</p>
+        <p><strong>Release:</strong> {{ movie.release_date }}</p>
+        <a href="{% url 'seat_booking' movie.id %}" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <p>No movies available.</p>
+  {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'bookings/base.html' %}
+{% block title %}Book Seats{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Book Seats for {{ movie.title }}</h2>
+
+<style>
+  .seat-container {
+    display: grid;
+    grid-template-columns: repeat(10, 60px); /* 10 seats per row */
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .seat-btn {
+    width: 60px;
+    height: 60px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+  }
+
+  .seat-btn.available {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .seat-btn.available:hover {
+    background-color: #43a047;
+    transform: scale(1.05);
+  }
+
+  .seat-btn.booked {
+    background-color: #b0b0b0;
+    color: white;
+    cursor: not-allowed;
+  }
+
+  .row-label {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    font-size: 20px;
+  }
+</style>
+
+<div class="container">
+  <form method="post" action="{% url 'seat_booking' movie.id %}">
+    {% csrf_token %}
+    {% regroup seats by row as seat_rows %}
+
+    {% for row in seat_rows %}
+      <div class="row-label">Row {{ row.grouper }}</div>
+      <div class="seat-container">
+        {% for seat in row.list %}
+          <button
+            type="submit"
+            name="seat_id"
+            value="{{ seat.id }}"
+            class="seat-btn {% if seat.is_booked %}booked{% else %}available{% endif %}"
+            {% if seat.is_booked %}disabled{% endif %}
+          >
+            {{ seat.number }}
+          </button>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </form>
+</div>
+{% endblock %}
