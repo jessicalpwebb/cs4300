@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-%&0$(x%dvn6+whn_z869017p28+d=rq*s8yq*470=9x(5hm5a5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','editor-jwcs4300-20.devedu.io', 'app-jwcs4300-20.devedu.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','editor-jwcs4300-20.devedu.io', 'app-jwcs4300-20.devedu.io', 'jessmovies.onrender.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://editor-jwcs4300-20.devedu.io',
